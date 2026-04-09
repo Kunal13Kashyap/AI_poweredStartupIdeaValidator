@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import API from "../services/api";
+import API, { deleteIdea } from "../services/api";
 import IdeaCard from "../components/IdeaCard";
 
 export default function Dashboard() {
@@ -35,7 +35,20 @@ export default function Dashboard() {
     };
   }, []);
 
-  // ✅ Loading state
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this idea?");
+    if (!confirmDelete) return;
+
+    try {
+      await deleteIdea(id);
+
+      setIdeas((prev) => prev.filter((idea) => idea._id !== id));
+    } catch (err) {
+      console.error("Delete failed:", err);
+      alert("Failed to delete idea");
+    }
+  };
+
   if (loading) {
     return (
       <div className="p-6 text-white text-center">
@@ -44,7 +57,6 @@ export default function Dashboard() {
     );
   }
 
-  // ✅ Error state
   if (error) {
     return (
       <div className="p-6 text-white text-center">
@@ -62,7 +74,11 @@ export default function Dashboard() {
       ) : (
         <div className="grid gap-4">
           {ideas.map((idea) => (
-            <IdeaCard key={idea._id} idea={idea} />
+            <IdeaCard
+              key={idea._id}
+              idea={idea}
+              onDelete={handleDelete}
+            />
           ))}
         </div>
       )}

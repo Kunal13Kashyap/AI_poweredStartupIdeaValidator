@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import { Rocket } from "lucide-react";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ export default function Navbar() {
         onClick={() => navigate("/")}
         className="text-xl font-bold cursor-pointer"
       >
-        🚀 AI Validator
+        <Rocket className="inline-block mr-2" size={20} /> AI Validator
       </h1>
 
       <div className="space-x-2">

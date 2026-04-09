@@ -45,7 +45,7 @@ export default function IdeaDetail() {
     };
   }, [id]);
 
-  // ✅ ERROR UI (correct place)
+  
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen text-white">

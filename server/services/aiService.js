@@ -42,41 +42,42 @@ description: ${description}
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "models/gemini-2.5-flash",
       contents: prompt,
     });
 
-    const text =
-      response.candidates?.[0]?.content?.parts?.[0]?.text || "";
+    let text = response.text;
 
-    console.log("RAW AI RESPONSE:\n", text);
-
-    const cleanText = text
-      .replace(/```json/g, "")
-      .replace(/```/g, "")
-      .trim();
-
-    const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
-
-    if (!jsonMatch) {
-      throw new Error("No valid JSON found");
+    if (!text) {
+      throw new Error("Empty AI response");
     }
 
-    const parsed = JSON.parse(jsonMatch[0]);
+    text = text.replace(/```json|```/g, "").trim();
+
+    text = text.replace(/,\s*([\]}])/g, "$1");
+
+    let parsed;
+
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      const match = text.match(/\{[\s\S]*\}/);
+      if (!match) throw new Error("Invalid JSON format");
+
+      let cleaned = match[0].replace(/,\s*([\]}])/g, "$1");
+      parsed = JSON.parse(cleaned);
+    }
+
+    
+    if (!parsed.problem || !parsed.customer) {
+      throw new Error("Incomplete AI response");
+    }
 
     return parsed;
-  } catch (err) {
-    console.error("AI Error:", err.message);
 
-    return {
-      problem: "Analysis unavailable",
-      customer: "N/A",
-      market: "N/A",
-      competitor: ["N/A", "N/A", "N/A"],
-      tech_stack: ["N/A"],
-      risk_level: "Medium",
-      profitability_score: 50,
-      justification: "Fallback due to AI error",
-    };
+  } catch (err) {
+    console.error("AI Service Error:", err.message);
+
+    throw new Error("Failed to generate AI report");
   }
 };
