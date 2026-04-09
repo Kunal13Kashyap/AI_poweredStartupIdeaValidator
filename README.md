@@ -68,13 +68,13 @@ Built as a complete MVP to simulate real-world product validation workflows.
 
 ## 🏗️ Architecture
 
-Frontend (React)
-⬇
-Backend API (Express)
-⬇
-AI Service (Gemini API)
-⬇
-MongoDB Database
+[ React Frontend ]
+         │
+         ▼
+[ Express Backend API ]
+     │            │
+     ▼            ▼
+[ Gemini API ]   [ MongoDB ]
 
 ---
 
@@ -167,8 +167,69 @@ Return ONLY JSON
 
 ## 🏗️ Project Structure
 
-/client → React frontend
-/server → Express backend
+AI_poweredStartupIdeaValidator/
+│
+├── client/                     # Frontend (React + Vite)
+│   ├── public/
+│   │   └── Favicon.png
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── IdeaCard.jsx
+│   │   │   ├── Loader.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── ReportSection.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Home.jsx
+│   │   │   └── IdeaDetail.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   │
+│   ├── .env
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── vercel.json
+│   └── vite.config.js
+│
+├── server/                     # Backend (Node.js + Express)
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── controllers/
+│   │   └── ideaController.js
+│   │
+│   ├── middleware/
+│   │   └── asyncHandler.js
+│   │
+│   ├── models/
+│   │   └── Idea.js
+│   │
+│   ├── routes/
+│   │   └── ideaRoutes.js
+│   │
+│   ├── services/
+│   │   └── aiService.js
+│   │
+│   ├── utils/
+│   │   └── errorHandler.js
+│   │
+│   ├── .env
+│   ├── index.js
+│   ├── package.json
+│   └── package-lock.json
+│
+├── .gitignore
+└── README.md
 
 ---
 
