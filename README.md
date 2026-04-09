@@ -6,7 +6,7 @@ An AI-powered web application that analyzes startup ideas and generates structur
 
 ## 🌐 Live Demo
 
-Frontend: https://your-frontend-link
+Frontend: https://ai-powered-startup-idea-validator.vercel.app
 Backend API: https://ai-poweredstartupideavalidator.onrender.com
 
 ---
@@ -55,7 +55,7 @@ Backend API: https://ai-poweredstartupideavalidator.onrender.com
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/Kunal13Kashyap/AI_poweredStartupIdeaValidator
 cd your-repo
 ```
 
@@ -83,7 +83,7 @@ Create `.env` file inside `/server`:
 
 ```
 PORT=5000
-MONGO_URI=your_mongodb_uri
+MONGO_URI=your_mongodb_url
 GEMINI_API_KEY=your_api_key
 ```
 
