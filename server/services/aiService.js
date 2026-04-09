@@ -9,36 +9,36 @@ const ai = new GoogleGenAI({
 
 export const generateReport = async (title, description) => {
   const prompt = `
-    You are an expert startup consultant.
+You are an expert startup consultant.
 
-    Return STRICTLY valid JSON only.
+Return STRICTLY valid JSON only.
 
-    {
-      "problem": "...",
-      "customer": "...",
-      "market": "...",
-      "competitor": [
-        "Competitor 1 - differentiation",
-        "Competitor 2 - differentiation",
-        "Competitor 3 - differentiation"
-      ],
-      "tech_stack": ["tech1", "tech2", "tech3", "tech4"],
-      "risk_level": "Low | Medium | High",
-      "profitability_score": 0,
-      "justification": "..."
-    }
+{
+  "problem": "...",
+  "customer": "...",
+  "market": "...",
+  "competitor": [
+    "Competitor 1 - differentiation",
+    "Competitor 2 - differentiation",
+    "Competitor 3 - differentiation"
+  ],
+  "tech_stack": ["tech1", "tech2", "tech3", "tech4"],
+  "risk_level": "Low | Medium | High",
+  "profitability_score": 0,
+  "justification": "..."
+}
 
-    Rules:
-    - No explanation
-    - No markdown
-    - Exactly 3 competitors
-    - Tech stack 4-6 items
-    - Score must be integer (0-100)
+Rules:
+- No explanation
+- No markdown
+- Exactly 3 competitors
+- Tech stack 4-6 items
+- Score must be integer (0-100)
 
-    Input:
-    title: ${title}
-    description: ${description}
-    `;
+Input:
+title: ${title}
+description: ${description}
+`;
 
   try {
     const response = await ai.models.generateContent({
@@ -46,17 +46,23 @@ export const generateReport = async (title, description) => {
       contents: prompt,
     });
 
-    const text = response.text;
+    const text =
+      response.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
-    const start = text.indexOf("{");
-    const end = text.lastIndexOf("}") + 1;
+    console.log("RAW AI RESPONSE:\n", text);
 
-    if (start === -1 || end === -1) {
-      throw new Error("Invalid JSON response");
+    const cleanText = text
+      .replace(/```json/g, "")
+      .replace(/```/g, "")
+      .trim();
+
+    const jsonMatch = cleanText.match(/\{[\s\S]*\}/);
+
+    if (!jsonMatch) {
+      throw new Error("No valid JSON found");
     }
 
-    const jsonString = text.slice(start, end);
-    const parsed = JSON.parse(jsonString);
+    const parsed = JSON.parse(jsonMatch[0]);
 
     return parsed;
   } catch (err) {
