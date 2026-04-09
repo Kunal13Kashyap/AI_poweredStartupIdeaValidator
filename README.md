@@ -82,8 +82,8 @@ MongoDB Database
 
 ### 1. Clone the repository
 
-git clone https://github.com/Kunal13Kashyap/AI_poweredStartupIdeaValidator.git
-cd AI_poweredStartupIdeaValidator
+* git clone https://github.com/Kunal13Kashyap/AI_poweredStartupIdeaValidator.git
+* cd AI_poweredStartupIdeaValidator
 
 ---
 
