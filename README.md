@@ -147,19 +147,21 @@ Return ONLY JSON
 
 ## 📡 API Endpoints
 
-POST /ideas → Submit idea & generate AI report
-GET /ideas → Fetch all ideas
-GET /ideas/:id → Get detailed report
-DELETE /ideas/:id → Delete idea (optional)
+- **POST /ideas** → Submit idea & generate AI report  
+- **GET /ideas** → Fetch all ideas  
+- **GET /ideas/:id** → Get detailed report  
+- **DELETE /ideas/:id** → Delete idea
 
 ---
 
 ## 🧩 Example Request
 
+```json
 {
-"title": "AI Study Planner",
-"description": "App that creates personalized study plans using AI"
+  "title": "AI Study Planner",
+  "description": "App that creates personalized study plans using AI"
 }
+```
 
 ---
 
