@@ -8,7 +8,7 @@ export default function IdeaCard({ idea }) {
     >
       <h2 className="font-semibold">{idea.title}</h2>
       <p className="text-sm text-gray-400">
-        {idea.description.slice(0, 80)}...
+        {idea.description?.slice(0, 80) || "No description"}...
       </p>
     </Link>
   );
