@@ -68,13 +68,7 @@ Built as a complete MVP to simulate real-world product validation workflows.
 
 ## 🏗️ Architecture
 
-[ React Frontend ]
-         │
-         ▼
-[ Express Backend API ]
-     │            │
-     ▼            ▼
-[ Gemini API ]   [ MongoDB ]
+**React Frontend** → **Express Backend API** → **Gemini AI Service** → **MongoDB**
 
 ---
 
@@ -167,6 +161,7 @@ Return ONLY JSON
 
 ## 🏗️ Project Structure
 
+```
 AI_poweredStartupIdeaValidator/
 │
 ├── client/                     # Frontend (React + Vite)
@@ -230,7 +225,7 @@ AI_poweredStartupIdeaValidator/
 │
 ├── .gitignore
 └── README.md
-
+```
 ---
 
 ## 🚀 Deployment
