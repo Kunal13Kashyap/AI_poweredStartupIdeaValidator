@@ -1,13 +1,14 @@
 # 🚀 AI Startup Idea Validator
 
-An AI-powered web application that analyzes startup ideas and generates structured validation reports using LLMs.
+An AI-powered full-stack web application that analyzes startup ideas and generates structured validation reports using LLMs.
+Built as a complete MVP to simulate real-world product validation workflows.
 
 ---
 
 ## 🌐 Live Demo
 
-* **Frontend:** https://ai-powered-startup-idea-validator.vercel.app
-* **Backend API:** https://ai-poweredstartupideavalidator.onrender.com
+* 🔗 Frontend: https://ai-powered-startup-idea-validator.vercel.app
+* 🔗 Backend API: https://ai-poweredstartupideavalidator.onrender.com
 
 ---
 
@@ -21,18 +22,20 @@ An AI-powered web application that analyzes startup ideas and generates structur
   * Market overview
   * Competitor analysis
   * Suggested tech stack
-  * Risk level
-  * Profitability score
-* Dashboard to view all ideas
-* Detailed report view
+  * Risk level (Low / Medium / High)
+  * Profitability score (0–100)
+* Dashboard to view all submitted ideas
+* Detailed report page with structured insights
+* Loading & error handling for smooth UX
+* Input validation for required fields
 
 ---
 
-## ⚙️ Tech Stack
+## 🛠 Tech Stack
 
 ### Frontend
 
-* React
+* React (Vite)
 * Tailwind CSS
 
 ### Backend
@@ -50,82 +53,146 @@ An AI-powered web application that analyzes startup ideas and generates structur
 
 ---
 
-## 📦 Installation
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home](./screenshots/home.png)
+
+### 📊 Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### 📄 Idea Detail
+![Detail](./screenshots/detail.png)
+
+---
+
+## 🏗️ Architecture
+
+Frontend (React)
+⬇
+Backend API (Express)
+⬇
+AI Service (Gemini API)
+⬇
+MongoDB Database
+
+---
+
+## ⚙️ Installation & Setup
 
 ### 1. Clone the repository
 
-```bash
 git clone https://github.com/Kunal13Kashyap/AI_poweredStartupIdeaValidator.git
 cd AI_poweredStartupIdeaValidator
-```
+
+---
 
 ### 2. Setup Backend
 
-```bash
 cd server
 npm install
+
+Create a `.env` file inside `/server`:
+
+PORT=5000
+MONGO_URI=your_mongodb_uri
+GEMINI_API_KEY=your_api_key
+
+Run backend:
 npm run dev
-```
+
+---
 
 ### 3. Setup Frontend
 
-```bash
 cd client
 npm install
-npm start
-```
+npm run dev
 
 ---
 
 ## 🔐 Environment Variables
 
-Create a `.env` file inside `/server`:
+Create a `.env` file in `/server` using:
 
-```env
 PORT=5000
-MONGO_URI=your_mongodb_url
-GEMINI_API_KEY=your_api_key
-```
+MONGO_URI=
+GEMINI_API_KEY=
 
 ---
 
 ## 🤖 AI Prompt Used
 
-```text
-You are an expert startup consultant. Analyze the given startup idea
-and return a structured JSON object with the fields: problem,
-customer, market, competitor, tech_stack, risk_level,
-profitability_score, justification.
+You are an expert startup consultant. Analyze the given startup idea and return a structured JSON object with the fields:
+
+* problem
+* customer
+* market
+* competitor
+* tech_stack
+* risk_level
+* profitability_score
+* justification
 
 Rules:
-- Keep answers concise and realistic
-- competitor should contain exactly 3 competitors
-- tech_stack should be 4–6 technologies
-- profitability_score must be between 0–100
+
+* Keep answers concise and realistic
+* competitor should contain exactly 3 competitors
+* tech_stack should be 4–6 practical technologies
+* profitability_score must be an integer between 0–100
 
 Return ONLY JSON
-```
 
 ---
 
-## 🧩 API Endpoints
+## 📡 API Endpoints
 
-* `POST /ideas` → Submit idea & generate AI report
-* `GET /ideas` → Fetch all ideas
-* `GET /ideas/:id` → Get detailed report
-* `DELETE /ideas/:id` → Delete idea (optional)
+POST /ideas → Submit idea & generate AI report
+GET /ideas → Fetch all ideas
+GET /ideas/:id → Get detailed report
+DELETE /ideas/:id → Delete idea (optional)
 
 ---
 
-## 🏗️ Architecture Notes
+## 🧩 Example Request
 
+{
+"title": "AI Study Planner",
+"description": "App that creates personalized study plans using AI"
+}
+
+---
+
+## 🏗️ Project Structure
+
+/client → React frontend
+/server → Express backend
+
+---
+
+## 🚀 Deployment
+
+* Frontend deployed on Vercel
+* Backend deployed on Render
+* Database hosted on MongoDB Atlas
+
+---
+
+## 📌 Notes
+
+* AI responses are parsed into structured JSON before storing in database
 * Backend follows MVC architecture
-* AI response is parsed and stored in MongoDB
-* REST APIs connect frontend and backend
-* Clean separation of concerns across layers
+* Clean separation of concerns (routes, controllers, services)
+* Designed for scalability and easy extension
 
 ---
 
 ## ✨ Author
 
-**Kunal Kashyap**
+Kunal Kashyap
+
+---
+
+## 📄 License
+
+This project is built as part of a technical assignment and is intended for educational purposes
