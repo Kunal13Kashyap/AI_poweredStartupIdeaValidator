@@ -126,16 +126,6 @@ Return ONLY JSON
 
 ---
 
-## 📸 Screenshots (Recommended)
-
-*Add screenshots of:*
-
-* Idea submission page
-* Dashboard
-* Detailed report view
-
----
-
 ## ✨ Author
 
 **Kunal Kashyap**
