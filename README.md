@@ -46,7 +46,7 @@ Backend API: https://ai-poweredstartupideavalidator.onrender.com
 
 ### AI
 
-* Google Gemini API (or OpenAI if used)
+* Google Gemini API
 
 ---
 
