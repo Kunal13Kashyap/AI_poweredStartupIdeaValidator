@@ -109,9 +109,11 @@ npm run dev
 
 Create a `.env` file in `/server` using:
 
+```
 PORT=5000
-MONGO_URI=
+MONGO_URL=
 GEMINI_API_KEY=
+```
 
 ---
 
