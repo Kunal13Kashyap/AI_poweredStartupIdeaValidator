@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <div className="min-h-screen bg-linear-to-br from-gray-900 to-black text-white">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
