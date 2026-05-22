@@ -301,4 +301,4 @@ Kunal Kashyap
 ---
 
 ## License
-MIT license
+MIT License
