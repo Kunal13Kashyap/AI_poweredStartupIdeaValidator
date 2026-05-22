@@ -17,13 +17,13 @@ The project was built to explore practical AI integration in modern full-stack a
 
 ## 📸 Screenshots
 
-### 🏠 Home Page
+### Home Page
 ![Home](./screenshots/home.png)
 
-### 📊 Dashboard
+### Dashboard
 ![Dashboard](./screenshots/dashboard.png)
 
-### 📄 Idea Detail
+### Idea Detail
 ![Detail](./screenshots/detail.png)
 
 ---
@@ -82,18 +82,18 @@ The project was built to explore practical AI integration in modern full-stack a
 ### AI Integration
 * Google Gemini API
 
-### Deploymeny
+### Deployment
 * Vercel
 * Render
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 **React Frontend** → **Express Backend API** → **Gemini AI Service** → **MongoDB**
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 | Method | Endpoint     | Description                                |
 | ------ | ------------ | ------------------------------------------ |
 | POST   | `/ideas`     | Submit startup idea and generate AI report |
@@ -103,7 +103,7 @@ The project was built to explore practical AI integration in modern full-stack a
 
 ---
 
-## 🧩 Example Request
+## Example Request
 
 ```json
 {
@@ -143,7 +143,7 @@ The project was built to explore practical AI integration in modern full-stack a
 ## Prompt Engineering
 The application uses structured prompting to ensure predictable and machine-readable AI outputs
 
-### 🤖 AI Prompt Used
+### Prompt Used
 You are an expert startup consultant. Analyze the given startup idea and return a structured JSON object with the fields:  
 
 problem  
@@ -173,7 +173,7 @@ Rules:
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 AI_poweredStartupIdeaValidator/
@@ -242,28 +242,23 @@ AI_poweredStartupIdeaValidator/
 ```
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the repository
 `git` clone https://github.com/Kunal13Kashyap/AI_poweredStartupIdeaValidator.git  
 `cd` AI_poweredStartupIdeaValidator
 
----
-
 ### 2. Setup Backend
 `cd` server  
 `npm` install
 
-Create a `.env` file inside `/server`:
-
-PORT=5000
-MONGO_URL=your_mongodb_url
+Create a `.env` file inside `/server`:  
+PORT=5000  
+MONGO_URL=your_mongodb_url  
 GEMINI_API_KEY=your_gemini_api_key
 
 Run backend:
 `npm` run dev
-
----
 
 ### 3. Setup Frontend
 `cd` client  
@@ -272,25 +267,25 @@ Run backend:
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 Create a `.env` file in `/server` using:
 
 ```
 PORT=5000
-MONGO_URL=
-GEMINI_API_KEY=
+MONGO_URL=your_mongodb_url 
+GEMINI_API_KEY=your_gemini_api_key
 ```
 
 ---
 
-## 🚀 Deployment
+## Deployment
 * Frontend deployed on Vercel
 * Backend deployed on Render
 * Database hosted on MongoDB Atlas
 
 ---
 
-## 📌 Notes
+## Future Improvements
 * User authentication
 * AI response regeneration
 * Report export as PDF
@@ -300,10 +295,10 @@ GEMINI_API_KEY=
 
 ---
 
-## ✨ Author
+## Author
 Kunal Kashyap
 
 ---
 
-## 📄 License
-This project was built for educational and portfolio purposes
+## License
+MIT license
