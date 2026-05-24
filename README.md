@@ -1,4 +1,4 @@
-# 🚀 AI Startup Idea Validator
+# 🚀 IdeaForge
 An AI-powered full-stack web application that analyzes startup ideas and generates structured validation reports using LLMs. Built as a complete MVP to simulate real-world startup validation workflows.
 
 ---
