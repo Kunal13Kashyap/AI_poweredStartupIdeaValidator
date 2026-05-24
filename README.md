@@ -5,7 +5,7 @@ An AI-powered full-stack web application that analyzes startup ideas and generat
 
 ## 🌐 Live Demo
 * 🔗 Frontend: https://ai-powered-startup-idea-validator.vercel.app
-* 🔗 Backend: https://ai-poweredstartupideavalidator.onrender.com
+* 🔗 Backend: https://ideaforge-dev.onrender.com
 
 ---
 
