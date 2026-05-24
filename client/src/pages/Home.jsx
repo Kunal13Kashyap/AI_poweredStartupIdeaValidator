@@ -47,7 +47,7 @@ export default function Home() {
       <div className="w-full max-w-xl bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-2xl shadow-xl">
 
         <h1 className="text-3xl font-bold mb-6 text-center">
-          🚀 AI Startup Idea Validator
+          🚀 Idea Forge
         </h1>
 
         <div className="space-y-4">
