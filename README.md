@@ -10,7 +10,7 @@ An AI-powered full-stack web application that analyzes startup ideas and generat
 ---
 
 ## Overview
-AI Startup Validator helps users evaluate startup ideas using AI-generated insights. Users can submit a startup concept and receive a structured validation report including market analysis, competitor research, profitability scoring, risk assessment, and suggested technologies.
+IdeaForge helps users evaluate startup ideas using AI-generated insights. Users can submit a startup concept and receive a structured validation report including market analysis, competitor research, profitability scoring, risk assessment, and suggested technologies.
 The project was built to explore practical AI integration in modern full-stack applications using the MERN ecosystem and Google Gemini API.
 
 ---
@@ -245,8 +245,8 @@ AI_poweredStartupIdeaValidator/
 ## Installation & Setup
 
 ### 1. Clone the repository
-`git` clone https://github.com/Kunal13Kashyap/AI_poweredStartupIdeaValidator.git  
-`cd` AI_poweredStartupIdeaValidator
+`git` clone https://github.com/Kunal13Kashyap/IdeaForge.git  
+`cd` IdeaForge
 
 ### 2. Setup Backend
 `cd` server  
