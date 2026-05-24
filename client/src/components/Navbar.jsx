@@ -12,7 +12,7 @@ export default function Navbar() {
         onClick={() => navigate("/")}
         className="text-xl font-bold cursor-pointer"
       >
-        <Rocket className="inline-block mr-2" size={20} /> AI Validator
+        <Rocket className="inline-block mr-2" size={20} /> AI Startup Idea Validator
       </h1>
 
       <div className="space-x-2">
